@@ -25,9 +25,13 @@ async function carregarUsuarios() {
             lista.appendChild(li);
         });
         status.textContent = "Usuários carregados com sucesso!";
+        status.className = "status-sucess";
+        
     } catch (erro) {
         status.textContent = "Erro ao carregar usuários";
+        status.className = "status-erro"
         console.error(erro);
-    }
+    } finally {
     btn.disable = false;
+    };
 };
